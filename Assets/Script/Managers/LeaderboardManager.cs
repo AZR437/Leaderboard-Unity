@@ -46,6 +46,7 @@ public class LeaderboardManager : MonoBehaviour
         this.AssignPlaces();
         this.UpdateDisplayLists();
     }
+    //the two functions below are for scalability, if we want to add more players or update the leaderboard after a player has changed their coins or level
     public void UpdateLeaderboard(Player player)
     {
         coinLeaderboard.Remove(player);
@@ -62,6 +63,7 @@ public class LeaderboardManager : MonoBehaviour
         this.AssignPlaces();
         this.UpdateDisplayLists();
     }
+    //assigns places to the players in the leaderboard
     private void AssignPlaces()
     {
         int nPlace = 1;
@@ -77,6 +79,7 @@ public class LeaderboardManager : MonoBehaviour
             nPlace++;
         }
     }
+    // this is to have a visuallization of the leaderboard in the inspector, since SortedSet doesn't serialize
     private void UpdateDisplayLists()
     {
         coinLeaderboardDisplay = coinLeaderboard.ToList();
