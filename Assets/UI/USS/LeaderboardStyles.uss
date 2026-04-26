@@ -1,0 +1,149 @@
+#Root {
+    flex-grow: 1;
+    visibility: hidden;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#LeaderboardOpen {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    height: 80px;
+    width: 300px;
+    font-size: 36px;
+    -unity-font-style: bold;
+    background-color: rgb(170, 89, 57);
+    color: rgb(49, 26, 17);
+    border-color: rgb(49, 26, 17);
+    display: flex;
+    visibility: visible;
+}
+#Container {
+    display: none;
+    visibility: visible;
+    flex-direction: column;
+    width: 75%;
+    height: 60%;
+    background-color: rgb(49, 26, 17);
+    border-radius: 15px;
+    border-width: 2px;
+    border-color: rgb(170, 89, 57);
+    align-items: center;
+    transition-property: scale, opacity;
+    transition-duration: 0.3s, 0.3s;
+    transition-timing-function: ease-out, ease-out;
+}
+
+#Container.popup-hidden {
+    scale: 0 0;
+    opacity: 0;
+}
+
+#Container.popup-visible {
+    scale: 1 1;
+    opacity: 1;
+}
+
+#Header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(170, 89, 57);
+}
+
+#Title {
+    font-size: 52px;
+    color: rgb(170, 89, 57);
+    -unity-font-style: bold;
+}
+
+#CloseButton {
+    width: 70px;
+    height: 70px;
+    font-size: 36px;
+    background-color: rgba(170, 89, 57, 0.3);
+    border-radius: 35px;
+    color: rgb(170, 89, 57);
+    border-width: 0;
+}
+
+#TabBar {
+    flex-direction: row;
+    width: 90%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#LevelTabButton, #CoinsTabButton {
+    flex-grow: 1;
+    height: 80px;
+    font-size: 40px;
+    background-color: rgba(170, 89, 57, 0.2);
+    color: rgba(255, 255, 255, 0.5);
+    border-width: 0;
+    border-radius: 12px;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.tab-active {
+    background-color: rgb(170, 89, 57);
+    color: white;
+}
+
+#ListContainer {
+    flex-grow: 1;
+    width: 90%;
+}
+
+#LevelList, #CoinsList {
+    flex-grow: 1;
+    width: 100%;
+}
+#PlayerCard {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: rgb(49, 26, 17);
+    border-color: rgb(170, 89, 57);
+    border-width: 3px;
+    border-radius: 15px;
+    padding: 30px 40px;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#PlayerCardName {
+    font-size: 56px;
+    -unity-font-style: bold;
+    color: rgb(170, 89, 57);
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+#PlayerCardLevel, #PlayerCardCoins {
+    font-size: 48px;
+    color: white;
+    flex-grow: 1;
+}
+
+#PlayerCardLevelPlace, #PlayerCardCoinPlace {
+    font-size: 56px;
+    -unity-font-style: bold;
+    color: white;
+    background-color: rgb(170, 89, 57);
+    border-radius: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}

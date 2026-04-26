@@ -1,0 +1,27 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/USS/LeaderboardStyles.uss?fileID=7433441132597879392&amp;guid=2c6ce8a960971bc4281834e52382071a&amp;type=3#LeaderboardStyles" />
+    <ui:VisualElement name="Root" style="visibility: hidden;">
+        <ui:Button name="LeaderboardOpen" text="Leaderboard" />
+        <ui:VisualElement name="PlayerCard" >
+            <ui:Label name="PlayerCardName" text="Carlos Arquillo" />
+            <ui:Label name="PlayerCardLevel" text="Lv 0" />
+            <ui:Label name="PlayerCardCoins" text="0 coins" />
+            <ui:Label name="PlayerCardLevelPlace" text="#0 Level" />
+            <ui:Label name="PlayerCardCoinPlace" text="#0 Coins" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Container" style="display: none;">
+            <ui:VisualElement name="Header">
+                <ui:Label name="Title" text="Leaderboard" />
+                <ui:Button name="CloseButton" text="X" />
+            </ui:VisualElement>
+            <ui:VisualElement name="TabBar">
+                <ui:Button name="LevelTabButton" text="Level" />
+                <ui:Button name="CoinsTabButton" text="Coins" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ListContainer">
+                <ui:ScrollView name="LevelList" />
+                <ui:ScrollView name="CoinsList" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
