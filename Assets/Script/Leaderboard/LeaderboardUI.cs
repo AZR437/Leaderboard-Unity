@@ -11,6 +11,7 @@ public class LeaderboardUI : MonoBehaviour
 
     private VisualElement root;
     private VisualElement container;
+    private VisualElement playerCard;
     private ScrollView levelList;
     private ScrollView coinsList;
     private Button levelTabButton;
@@ -34,6 +35,7 @@ public class LeaderboardUI : MonoBehaviour
     {
         root = uiDocument.rootVisualElement.Q<VisualElement>("Root");
         container = root.Q<VisualElement>("Container");
+        playerCard = root.Q<VisualElement>("PlayerCard");
         levelList = root.Q<ScrollView>("LevelList");
         coinsList = root.Q<ScrollView>("CoinsList");
         levelTabButton = root.Q<Button>("LevelTabButton");
@@ -63,6 +65,13 @@ public class LeaderboardUI : MonoBehaviour
 
         leaderboardButton.SetEnabled(false);
         root.style.visibility = Visibility.Visible;
+
+        // show player card
+        playerCard.style.display = DisplayStyle.Flex;
+        playerCard.RemoveFromClassList("card-visible");
+        playerCard.AddToClassList("card-hidden");
+
+        // show container
         container.style.display = DisplayStyle.Flex;
         container.RemoveFromClassList("popup-visible");
         container.AddToClassList("popup-hidden");
@@ -71,6 +80,8 @@ public class LeaderboardUI : MonoBehaviour
         {
             container.RemoveFromClassList("popup-hidden");
             container.AddToClassList("popup-visible");
+            playerCard.RemoveFromClassList("card-hidden");
+            playerCard.AddToClassList("card-visible");
         }).StartingIn(10);
     }
 
@@ -78,10 +89,13 @@ public class LeaderboardUI : MonoBehaviour
     {
         container.RemoveFromClassList("popup-visible");
         container.AddToClassList("popup-hidden");
+        playerCard.RemoveFromClassList("card-visible");
+        playerCard.AddToClassList("card-hidden");
 
         container.schedule.Execute(() =>
         {
             container.style.display = DisplayStyle.None;
+            playerCard.style.display = DisplayStyle.None;
             root.style.visibility = Visibility.Hidden;
             leaderboardButton.SetEnabled(true);
         }).StartingIn(300);
